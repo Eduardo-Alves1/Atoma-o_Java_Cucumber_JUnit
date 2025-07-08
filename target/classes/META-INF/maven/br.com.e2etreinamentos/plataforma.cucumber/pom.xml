@@ -1,37 +1,48 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<properties>
-		<junit-bom-scope>import</junit-bom-scope>
-	</properties>
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.e2etreinamentos</groupId>
 	<artifactId>plataforma.cucumber</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+	<properties>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.junit</groupId>
+				<artifactId>junit-bom</artifactId>
+				<version>5.10.2</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
 		<!-- JUnit Jupiter API (JUnit 5) -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
-			<version>5.10.2</version>
 			<scope>test</scope>
 		</dependency>
 
-		<!-- JUnit Engine (necessário para executar os testes) -->
+		<!-- JUnit Engine -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
-			<version>5.10.2</version>
 			<scope>test</scope>
 		</dependency>
 
-		<!-- JUnit Platform Suite para executar com @Suite -->
+		<!-- JUnit Platform Suite -->
 		<dependency>
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-suite</artifactId>
-			<version>1.10.2</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -43,7 +54,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- Cucumber Java (lógica dos steps) -->
+		<!-- Cucumber Java -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
@@ -56,17 +67,19 @@
 			<artifactId>selenium-java</artifactId>
 			<version>4.21.0</version>
 		</dependency>
-
-		<dependency>
-			<groupId>org.junit</groupId>
-			<artifactId>junit-bom</artifactId>
-			<version>5.10.2</version>
-			<type>pom</type>
-			<scope>import</scope>
-		</dependency>
-
-
 	</dependencies>
 
-
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>21</source>
+					<target>21</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

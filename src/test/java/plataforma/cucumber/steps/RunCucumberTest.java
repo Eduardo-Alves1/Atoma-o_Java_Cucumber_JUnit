@@ -1,4 +1,5 @@
-package plataforma.cucumber;
+package plataforma.cucumber.steps;
+
 
 import org.junit.platform.suite.api.ConfigurationParameter;
 import static io.cucumber.junit.platform.engine.Constants.GLUE_PROPERTY_NAME;
