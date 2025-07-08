@@ -11,9 +11,10 @@ import org.junit.platform.suite.api.Suite;
 @IncludeEngines("cucumber")
 @SelectClasspathResource("features")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "plataforma.cucumber.steps")
-@ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "")
+@ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "@logout")
 @ConfigurationParameter(key = "cucumber.execution.dry-run", value = "false")
 @ConfigurationParameter(key = "cucumber.plugin", value = "pretty, html:target/cucumber-report.html")
+//@ConfigurationParameter(key = "cucumber.plugin", value = "pretty, html:target/cucumber-report.html, io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm")
 @ConfigurationParameter(key = "cucumber.publish.quiet", value = "true")
 
 

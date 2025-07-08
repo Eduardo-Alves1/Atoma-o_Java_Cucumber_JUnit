@@ -1,5 +1,6 @@
-plataforma/cucumber/steps/RunCucumberTest.class
+pages/LogoutElements.class
 support/Config.class
 pages/LoginElements.class
 plataforma/cucumber/RunCucumberTest.class
 plataforma/cucumber/steps/LoginSteps.class
+plataforma/cucumber/steps/logoutSteps.class
